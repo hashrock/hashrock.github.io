@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>181dev</title>
+  <link href='http://fonts.googleapis.com/css?family=Flamenco:300' rel='stylesheet' type='text/css'>
+  <style>
+  body {
+    background: rgb(232, 255, 207);
+  }
+  circle{
+    fill: black;
+    opacity: 0.9;
+  }
+
+  text {
+    text-anchor: middle;
+    fill: #A6E44A;
+    font-size: 5rem;
+    font-family: 'Flamenco', cursive;
+  }
+  g > a > text{
+    fill: white;
+    font-size: 1.5rem;
+  }
+  text#Description{
+    font-size: 1.5rem;
+  }
+  </style>
+</head>
+<body>
+  <svg id="main">
+    <text x="50%" y="50%" dy=".3em">181dev</text>
+    <text x="50%" y="50%" dy="2.2em" id="Description">Frontend engineer, Japan, Tokyo</text>
+  </svg>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+var w = $(window).width();
+var h = $(window).height();
+var svg = d3.select("svg#main")
+  .attr("width", w)
+  .attr("height", h);
+
+var data = [
+    {text: "UX Designer", r: 150, url: "http://181dev.hatenablog.com/category/UX"},
+    {text: "D3.js & SVG", r: 100, url: "http://181dev.hatenablog.com/category/d3"},
+    {text: "angularjs", r: 90, url: "http://181dev.hatenablog.com/category/angular"},
+    {text: "GitHub", r: 80, url: "https://github.com/181dev"}
+];
+
+var force = d3.layout.force()
+  .nodes(data)
+  .gravity(.02)
+  .charge([-500])
+  .size([w, h]);
+
+var nodes = force.nodes();
+var node = svg.selectAll("g").data(nodes);
+
+var onmouseDuration = 200;
+
+var g = node.enter().append("g").append("a");
+g.attr("xlink:href", function(d) {return d.url});
+g.on("mouseover", function(){
+  d3.select(this)
+  .select("circle")
+  .transition().duration(onmouseDuration)
+  .style("fill","white")
+  .attr("r", function(d){return d.r + 5;} );
+  d3.select(this)
+  .select("text")
+  .style("fill","black");
+})
+.on("mouseout", function(){
+  d3.select(this)
+  .select("circle")
+  .transition().duration(onmouseDuration)
+  .style("fill","black")
+  .attr("r", function(d){return d.r - 5;} );
+  d3.select(this)
+  .select("text")
+  .style("fill","white");
+})
+.on("click", function(){
+});
+
+g.append("circle")
+  .attr("r", function(d){return d.r;});
+
+g.append("text")
+  .text(function(d){
+    return d.text;
+  });
+
+
+force.on("tick", function(e){
+  node.attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
+});
+
+
+node.call(force.drag);
+force.start();
+
+</script>
+</body>
+</html>
