@@ -12,7 +12,6 @@
     fill: black;
     opacity: 0.9;
   }
-
   text {
     text-anchor: middle;
     fill: #A6E44A;
@@ -37,6 +36,7 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
+/*global d3:false */
 var w = $(window).width();
 var h = $(window).height();
 var svg = d3.select("svg#main")
@@ -52,7 +52,7 @@ var data = [
 
 var force = d3.layout.force()
   .nodes(data)
-  .gravity(.02)
+  .gravity(0.02)
   .charge([-500])
   .size([w, h]);
 
@@ -62,7 +62,7 @@ var node = svg.selectAll("g").data(nodes);
 var onmouseDuration = 200;
 
 var g = node.enter().append("g").append("a");
-g.attr("xlink:href", function(d) {return d.url});
+g.attr("xlink:href", function(d) {return d.url;});
 g.on("mouseover", function(){
   d3.select(this)
   .select("circle")
@@ -95,7 +95,7 @@ g.append("text")
   });
 
 
-force.on("tick", function(e){
+force.on("tick", function(){
   node.attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
 });
 
