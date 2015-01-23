@@ -43,103 +43,87 @@ var svg = d3.select("svg#main")
   .attr("width", w)
   .attr("height", h);
 
-var data = [
-    {text: "UX Designer", r: 150, url: "http://hashrock.hatenablog.com/category/UX"},
-    {text: "D3.js & SVG", r: 100, url: "http://hashrock.hatenablog.com/category/d3"},
-    {text: "github", r: 80, url: "https://github.com/hashrock"},
-    {text: "taskquest", r: 60, url: "https://github.com/hashrock/taskquest"},
-    {text: "twitter", r: 60, url: "https://twitter.com/hashedrock"},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""},
-    {text: "", r: 10, url: ""}
+$.getJSON("https://script.google.com/macros/s/AKfycbwyeA6IX_t1QE9lyBpIPzGkhdJWlYqT1Z7jpd-aT0FRi9ycrox1/exec", function(data){
+    var force = d3.layout.force()
+            .nodes(data)
+            .gravity(0.05)
+            .charge([-600])
+            .size([w, h]);
 
-];
+    var nodes = force.nodes();
 
-var force = d3.layout.force()
-  .nodes(data)
-  .gravity(0.05)
-  .charge([-600])
-  .size([w, h]);
+    var onmouseDuration = 200;
+    var g;
+    var node;
 
-var nodes = force.nodes();
+    function calc(){
+        node = svg.selectAll("g").data(nodes);
+        node.exit().remove();
+        g = node.enter().insert("g").append("a");
 
-var onmouseDuration = 200;
-var g;
-var node;
+        g.attr("xlink:href", function(d) {return d.url;});
+        g.on("mouseover", function(){
+            d3.select(this)
+                    .select("circle")
+                    .transition().duration(onmouseDuration)
+                    .style("fill","white");
+            d3.select(this)
+                    .select("text")
+                    .style("fill","green");
+        })
+                .on("mouseout", function(){
+                    d3.select(this)
+                            .select("circle")
+                            .transition().duration(onmouseDuration)
+                            .style("fill","green");
+                    d3.select(this)
+                            .select("text")
+                            .style("fill","white");
+                })
+                .on("click", function(){
+                });
 
-function calc(){
-	node = svg.selectAll("g").data(nodes);
-	node.exit().remove();
-	g = node.enter().insert("g").append("a");
+        g.append("circle")
+                .attr("r", function(d){return d.r;});
 
-	g.attr("xlink:href", function(d) {return d.url;});
-	g.on("mouseover", function(){
-	  d3.select(this)
-	  .select("circle")
-	  .transition().duration(onmouseDuration)
-	  .style("fill","white");
-	  d3.select(this)
-	  .select("text")
-	  .style("fill","green");
-	})
-	.on("mouseout", function(){
-	  d3.select(this)
-	  .select("circle")
-	  .transition().duration(onmouseDuration)
-	  .style("fill","green");
-	  d3.select(this)
-	  .select("text")
-	  .style("fill","white");
-	})
-	.on("click", function(){
-	});
-
-	g.append("circle")
-	  .attr("r", function(d){return d.r;});
-
-	g.append("text")
-	  .text(function(d){
-	    return d.text;
-	  });
+        g.append("text")
+                .text(function(d){
+                    return d.text;
+                });
 
 
-	force.on("tick", function(){
-	  node.attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
-	});
+        force.on("tick", function(){
+            node.attr("transform", function(d){return "translate(" + d.x + "," + d.y + ")";});
+        });
 
-	node.call(force.drag);
-	force.start();
+        node.call(force.drag);
+        force.start();
 
-}
+    }
 
-calc();
+    calc();
 
-setInterval(function(){
-	data.push({text: "", r: 10, url: ""});
-	calc();
-}, 1000);
-	
-setInterval(function(){
-	setTimeout(function(){
-		data.splice(6, 1);
-		calc();
-	}, 200);
-	setTimeout(function(){
-		data.splice(6, 1);
-		calc();
-	}, 400);
-	setTimeout(function(){
-		data.splice(6, 1);
-		calc();
-	}, 600);
-}, 3000);
+    setInterval(function(){
+        data.push({text: "", r: 10, url: ""});
+        calc();
+    }, 1000);
+
+    setInterval(function(){
+        setTimeout(function(){
+            data.splice(6, 1);
+            calc();
+        }, 200);
+        setTimeout(function(){
+            data.splice(6, 1);
+            calc();
+        }, 400);
+        setTimeout(function(){
+            data.splice(6, 1);
+            calc();
+        }, 600);
+    }, 3000);
+});
+
 
 </script>
 </body>
