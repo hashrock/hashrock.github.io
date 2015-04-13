@@ -1,12 +1,11 @@
-// Code goes here
-
 function getCover(card) {
-    if (card.attachments && card.attachments.length > 0 && card.attachments[0].previews) {
-        return card.attachments[0].previews[3].url;
+    var attachments = card.attachments;
+    if ( attachments&& attachments.length > 0 && attachments[0].previews) {
+        var previews = attachments[0].previews;
+        return previews[previews.length - 1].url;
     }
     return "";
 }
-
 
 function getCard(cards, listId) {
     return cards
@@ -24,8 +23,14 @@ function getCard(cards, listId) {
 new Vue({
     el: "#main",
     data: {
-        products: [],
-        ideas: [],
+        products: [
+            {
+                name: "Loading...",
+                cover:"",
+                desc:""
+            }
+        ],
+        ideas: [{name: "loading..."}],
         result: ""
     },
     ready: function() {
@@ -34,12 +39,12 @@ new Vue({
             .then(function(response) {
                 return response.json()
             }).then(function(json) {
-                var lists = json.lists.map(function(list) {
+                var lists = json.lists.map(function (list) {
                     return {
                         name: list.name,
                         cards: getCard(json.cards, list.id)
                     };
-                })
+                });
                 self.result = JSON.stringify(lists);
                 self.products = lists.filter(function(item) {
                     return item.name === "作った"

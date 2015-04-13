@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col s12 m4" v-repeat="product : products">
                 <div class="card small">
-                    <div class="card-image">
+                    <div class="card-image" style="background: #7c7c7c">
                         <img src="{{product.cover}}" />
                     </div>
                     <div class="card-content">
@@ -28,11 +28,6 @@
                             {{{product.desc}}}
                         </div>
                     </div>
-                    <!--
-                    <div class="card-action">
-                      <a href='#'>This is a link</a>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
@@ -43,49 +38,36 @@
                 {{idea.name}}
             </li>
         </ul>
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                    <div class="col s2">
-                        <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="circle responsive-img" />
-                    </div>
-                    <div class="col s10">
-                <span class="black-text">
-                  <h6>contact me</h6>
-                  <p>
-                      <a href="https://twitter.com/hashedrock">Twitter</a>
-                  </p>
-                  <p>
-                      <a href="https://github.com/hashrock">Github</a>
-                  </p>
-                </span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <footer class="page-footer">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text"><!-- TODO --></h5>
-                <p class="grey-text text-lighten-4"><!-- TODO --></p>
+            <div class="col s2">
+                <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="circle responsive-img" />
             </div>
-            <div class="col l4 offset-l2 s12">
+
+            <div class="col s4">
+                <h5 class="white-text">
+                    Hashrock
+                </h5>
+                <p class="grey-text text-lighten-4">Programmer</p>
+            </div>
+
+            <div class="col s6">
                 <h5 class="white-text">Links</h5>
                 <ul>
                     <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                        <a class="grey-text text-lighten-3" href="https://twitter.com/hashedrock">Twitter</a>
                     </li>
                     <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                        <a class="grey-text text-lighten-3" href="https://github.com/hashrock">Github</a>
                     </li>
                     <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                        <a class="grey-text text-lighten-3" href="http://hashrock.hatenablog.com/">Blog</a>
                     </li>
                     <li>
-                        <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                        <a class="grey-text text-lighten-3" href="https://github.com/sushicorp">Sushicorp</a>
                     </li>
                 </ul>
             </div>
@@ -94,7 +76,6 @@
     <div class="footer-copyright">
         <div class="container">
             © 2014 hashrock
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>
 </footer>
