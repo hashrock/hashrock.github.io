@@ -35,7 +35,8 @@ new Vue({
     },
     ready: function() {
         var self = this;
-        fetch("https://jsonp.afeld.me/?url=https%3A%2F%2Ftrello.com%2Fb%2FVusqcRPc%2Fproduct.json")
+//        fetch("https://jsonp.afeld.me/?url=https%3A%2F%2Ftrello.com%2Fb%2FVusqcRPc%2Fproduct.json")
+        fetch("./product.json")
             .then(function(response) {
                 return response.json()
             }).then(function(json) {
