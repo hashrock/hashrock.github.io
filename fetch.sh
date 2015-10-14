@@ -1,1 +1,1 @@
-wget https://trello.com/b/VusqcRPc/product.json
+wget https://trello.com/b/VusqcRPc/product.json -O product.json
