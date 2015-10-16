@@ -36,7 +36,7 @@ new Vue({
     ready: function() {
         var self = this;
 //        fetch("https://jsonp.afeld.me/?url=https%3A%2F%2Ftrello.com%2Fb%2FVusqcRPc%2Fproduct.json")
-        fetch("./product.json")
+        fetch("https://s3.amazonaws.com/resource.hashrock.github.io/product.json")
             .then(function(response) {
                 return response.json()
             }).then(function(json) {
