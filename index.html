@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <nav>
             <ul>
                 <li>
@@ -33,10 +33,13 @@
                 </li>
             </ul>
         </nav>
-
+        
+    </header>    
+    <main>
         <h2>作ったもの</h2>
         <div class="products">
             <div class="products__item" v-repeat="product : products" v-style="background-image: 'url(' + product.cover + ')'">
+                <div class="products__item__darken"></div>
                 <div class="products__item__desc">
                     <h3>{{product.name}}</h3>
                     <p>
@@ -48,11 +51,14 @@
         </div>
         
         <h2>アイデアリスト</h2>
-        <ul>
-            <li v-repeat="idea:ideas">
-                {{idea.name}}
-            </li>
-        </ul>
+        <div class="ideaList">
+            <ul>
+                <li v-repeat="idea:ideas">
+                    {{idea.name}}
+                </li>
+            </ul>
+            
+        </div>
 
         <!-- footer -->
         <footer>
