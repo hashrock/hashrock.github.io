@@ -21,7 +21,7 @@ function getCard(cards, listId) {
 }
 
 new Vue({
-    el: "#main",
+    el: "main",
     data: {
         products: [
             {

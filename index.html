@@ -5,81 +5,63 @@
     <script data-require="vue.js@*" data-semver="0.10.5" src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
     <script data-require="fetch@*" data-semver="0.7.0" src="https://cdn.rawgit.com/github/fetch/master/fetch.js"></script>
     <script data-require="marked@*" data-semver="0.3.2" src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-<div class="container">
-    <h1>@hashedrock</h1>
-    <div id="main">
-        <h4>作ったもの</h4>
-        <div class="row">
-            <div class="col s12 m4" v-repeat="product : products">
-                <div class="card small">
-                    <div class="card-image" style="background: #7c7c7c">
-                        <img src="{{product.cover}}" />
-                    </div>
-                    <div class="card-content">
-                        <h5>
-                            {{product.name}}
-                        </h5>
+    <main>
+        <nav>
+            <ul>
+                <li>
+                    <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="header__avatar" />
+                    <p>
+                        @hashedrock
+                    </p>
+                </li>
+                <li>
+                    <a class="grey-text text-lighten-3" href="https://twitter.com/hashedrock">Twitter</a>
+                </li>
+                <li>
+                    <a class="grey-text text-lighten-3" href="https://github.com/hashrock">Github</a>
+                </li>
+                <li>
+                    <a class="grey-text text-lighten-3" href="http://hashrock.hatenablog.com/">Blog</a>
+                </li>
+                <li>
+                    <a class="grey-text text-lighten-3" href="https://github.com/sushicorp">Sushicorp</a>
+                </li>
+            </ul>
+        </nav>
 
-                        <div>
-                            {{{product.desc}}}
-                        </div>
-                    </div>
+        <h2>作ったもの</h2>
+        <div class="products">
+            <div class="products__item" v-repeat="product : products" v-style="background-image: 'url(' + product.cover + ')'">
+                <div class="products__item__desc">
+                    <h3>{{product.name}}</h3>
+                    <p>
+                        {{{product.desc}}}
+                    </p>
                 </div>
             </div>
+            
         </div>
-        <h4>アイデアリスト</h4>
+        
+        <h2>アイデアリスト</h2>
         <ul>
             <li v-repeat="idea:ideas">
-                <i class="mdi-action-label"></i>
-                {{idea.name}}
+                <i class="mdi-action-label"></i> {{idea.name}}
             </li>
         </ul>
-    </div>
-</div>
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col s2">
-                <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="circle responsive-img" />
-            </div>
 
-            <div class="col s4">
-                <h5 class="white-text">
-                    Hashrock
-                </h5>
-                <p class="grey-text text-lighten-4">Programmer</p>
-            </div>
+        <!-- footer -->
+        <footer>
+            <p>&copy 2015 hashrock</p>
+        </footer>
+    </main>
 
-            <div class="col s6">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="https://twitter.com/hashedrock">Twitter</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="https://github.com/hashrock">Github</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="http://hashrock.hatenablog.com/">Blog</a>
-                    </li>
-                    <li>
-                        <a class="grey-text text-lighten-3" href="https://github.com/sushicorp">Sushicorp</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2015 hashrock
-        </div>
-    </div>
-</footer>
-<script src="index.js"></script>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
