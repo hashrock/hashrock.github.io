@@ -1,28 +1,21 @@
+<style>
+    .header__centered{
+        text-align: center;
+        margin-top: 4rem;
+    }
+</style>
+
 <template>
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="header__avatar" />
-                    <p>
-                        @hashedrock
-                    </p>
-                </li>
-                <li>
-                    <a href="https://twitter.com/hashedrock">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://github.com/hashrock">Github</a>
-                </li>
-                <li>
-                    <a href="http://hashrock.hatenablog.com/">Blog</a>
-                </li>
-                <li>
-                    <a href="https://github.com/sushicorp">Sushicorp</a>
-                </li>
-            </ul>
-        </nav>
-
+        <div class="header__centered">
+            <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="header__avatar" />
+        </div>
+        <div class="header__centered">
+            <a href="https://twitter.com/hashedrock">Twitter</a> /
+            <a href="https://github.com/hashrock">Github</a> /
+            <a href="http://hashrock.hatenablog.com/">Blog</a> /
+            <a href="https://github.com/sushicorp">Sushicorp</a>
+        </div>
     </header>
     <main>
         <h2>作ったもの</h2>
@@ -51,7 +44,7 @@
 
         <!-- footer -->
         <footer>
-            <p>&copy 2015 hashrock</p>
+            <p>&copy 2016 hashrock</p>
         </footer>
     </main>
 </template>
