@@ -11,64 +11,10 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>
-                    <img src="https://pbs.twimg.com/profile_images/516989081239027712/PALZRFOI_400x400.png" alt="" class="header__avatar" />
-                    <p>
-                        @hashedrock
-                    </p>
-                </li>
-                <li>
-                    <a href="https://twitter.com/hashedrock">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://github.com/hashrock">Github</a>
-                </li>
-                <li>
-                    <a href="http://hashrock.hatenablog.com/">Blog</a>
-                </li>
-                <li>
-                    <a href="https://github.com/sushicorp">Sushicorp</a>
-                </li>
-            </ul>
-        </nav>
-        
-    </header>    
-    <main>
-        <h2>作ったもの</h2>
-        <div class="products">
-            <div class="products__item" v-repeat="product : products" v-style="background-image: 'url(' + product.cover + ')'">
-                <div class="products__item__darken"></div>
-                <div class="products__item__desc">
-                    <h3>{{product.name}}</h3>
-                    <p>
-                        {{{product.desc}}}
-                    </p>
-                </div>
-            </div>
-            
-        </div>
-        
-        <h2>アイデアリスト</h2>
-        <div class="ideaList">
-            <ul>
-                <li v-repeat="idea:ideas">
-                    {{idea.name}}
-                </li>
-            </ul>
-            
-        </div>
-
-        <!-- footer -->
-        <footer>
-            <p>&copy 2015 hashrock</p>
-        </footer>
-    </main>
-
-
-    <script src="index.js"></script>
+    <div class="app">
+        <app></app>
+    </div>
+    <script src="bundle.js"></script>
 </body>
 
 </html>
