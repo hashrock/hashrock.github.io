@@ -57,6 +57,7 @@
 </template>
 
 <script>
+var marked = require("marked");
 function getCover(card) {
     var attachments = card.attachments;
     if ( attachments&& attachments.length > 0 && attachments[0].previews) {
