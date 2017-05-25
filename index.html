@@ -1,17 +1,38 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./marx.min.css">
+    <meta charset="UTF-8">
+    <title>hashrock</title>
+    <script src="https://get.mavo.io/mavo.js"></script>
+    <script src="https://plugins.mavo.io/markdown/mavo-markdown.js"></script>
+    <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div class="app">
-        <app></app>
-    </div>
-    <script src="bundle.js"></script>
-</body>
+    <main mv-app="homepage" mv-storage="https://github.com/hashrock-sandbox/portfolio-data" mv-plugins="markdown">
+        <div class="hero">
+            <img property="image" src="images/photo.jpg" alt="" width="200px">
+        </div>
 
-</html>
+        <div property="description" class="markdown description">Write Here</div>
+
+        <div class="links">
+            <a href="https://twitter.com/hashedrock">
+                <span class="brandico-twitter"></span>
+            </a>
+            <a href="https://github.com/hashrock">
+                <span class="brandico-github"></span>
+            </a>
+        </div>
+    </main>
+    <script>
+        document.body.addEventListener("keyup", function(ev){
+            if(event.keyCode === 69){
+                document.querySelector(".mv-bar.mv-ui").style.display = "flex";
+            }
+        });
+    </script>
+
+</body>

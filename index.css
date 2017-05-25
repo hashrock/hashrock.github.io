@@ -1,99 +1,36 @@
-main{
-  max-width: 100rem;
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+[class*="brandico-"]:before {
+    font-family: 'brandico', sans-serif;
+    font-size: 40px;
 }
-header{
-  background: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.34);
-  height: 180px;
+.hero{
+    text-align: center;
+    margin: 0 0 3rem 0;
+}
+.mv-bar.mv-ui{
+    display: none;
 }
 body{
-  background: #E4E4E4;
+    background: #8858ad;
+    color:#feebdd;
+    margin: 0;
+    padding-top: 3rem;
 }
-
-.header__avatar{
-	width: 64px;
-	border-radius: 64px;
+html{
+    margin: 0;
 }
-.products{
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
+a{
+    color:#ff8fd1;
 }
-
-.products__item{
-  height: 280px;
-  background-size: cover;
-  position: relative;
-  margin: 20px 3px 0 3px;
-  border: 4px solid white;
-  box-sizing: border-box;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.33);
+a:hover{
+    color:#ff8fd1;
 }
-
-.products__item__desc{
-  position: absolute;
-  top: 40%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.87);
-  margin: 10px;
-  color: black;
+a:active{
+    color:#ff8fd1;
 }
-.products__item__darken{
-  transition: all .2s ease;
-  position: absolute;
-  top: 0%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.5;
-  background: black;
+.description{
+    margin: 3rem 0;
 }
-.products__item:hover .products__item__darken{
-  opacity: 0.1;
-}
-
-.products__item__desc a{
-  display: inline-block;
-  transition: all .2s ease;
-  color: white;
-  background: black;
-  padding: 2px;
-  text-decoration: underline;
-}
-.products__item__desc a:hover{
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-}
-
-.products__item h3{
-  font-size: 1.2rem;
-  margin: 10px;
-}
-.products__item p{
-  font-size: 1.2rem;
-  margin: 5px;
-}
-h2{
-  text-align: center;
-  margin-top: 40px;
-}
-
-.ideaList{
-  background: white;
-  padding: 20px;
-  font-size: 1.5rem;
-}
-
-@media (min-width: 24em) {
-  .products__item{
-    flex: 0 0 100%;
-  }
-}
-
-@media (min-width: 48em) {
-  .products__item{
-    flex: 0 0 32%;
-  }
+.links{
+    text-align: center;
 }
