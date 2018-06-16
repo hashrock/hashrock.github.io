@@ -28,8 +28,15 @@
       padding-top: 8rem;
     }
 
+    #about {
+      opacity: 0;
+    }
 
-    #about path {
+    #about.start {
+      opacity: 1;
+    }
+
+    #about.start path {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       animation: dash 10s ease forwards;
@@ -68,6 +75,11 @@
   </style>
   <script type="text/javascript" src="http://paperjs.org/assets/js/paper.js"></script>
   <script type="text/paperscript" src="path.js" canvas="canvas"></script>
+  <script>
+    function onloadFusen() {
+      document.querySelector("#about").classList.add("start")
+    }
+  </script>
 </head>
 
 <body>
@@ -80,7 +92,7 @@
       width="728.5px" height="515.91px" viewBox="0 0 728.5 515.91" enable-background="new 0 0 728.5 515.91" xml:space="preserve">
       <g id="レイヤー_1">
 
-        <image overflow="visible" width="2032" height="1651" xlink:href="assets/fusen-back.png" transform="matrix(0.3282 0 0 0.3282 31 -11)">
+        <image onload="onloadFusen()" overflow="visible" width="2032" height="1651" xlink:href="assets/fusen-back.png" transform="matrix(0.3282 0 0 0.3282 31 -11)">
         </image>
       </g>
       <g id="レイヤー_2">
