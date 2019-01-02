@@ -1,45 +1,147 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'brandico';
+  font-family: "brandico";
   font-style: normal;
   font-weight: normal;
-  src: url('./brandico.woff') format('woff');
+  src: url("./brandico.woff") format("woff");
 }
-.brandico-facebook:before{content:"\f300"}.brandico-facebook-rect:before{content:"\f301"}.brandico-twitter:before{content:"\f302"}.brandico-twitter-bird:before{content:"\f303"}.brandico-vimeo:before{content:"\f30f"}.brandico-vimeo-rect:before{content:"\f30e"}.brandico-tumblr:before{content:"\f311"}.brandico-tumblr-rect:before{content:"\f310"}.brandico-googleplus-rect:before{content:"\f309"}.brandico-github-text:before{content:"\f307"}.brandico-github:before{content:"\f308"}.brandico-skype:before{content:"\f30b"}.brandico-icq:before{content:"\f304"}.brandico-yandex:before{content:"\f305"}.brandico-yandex-rect:before{content:"\f306"}.brandico-vkontakte-rect:before{content:"\f30a"}.brandico-odnoklassniki:before{content:"\f30c"}.brandico-odnoklassniki-rect:before{content:"\f30d"}.brandico-friendfeed:before{content:"\f312"}.brandico-friendfeed-rect:before{content:"\f313"}.brandico-blogger:before{content:"\f314"}.brandico-blogger-rect:before{content:"\f315"}.brandico-deviantart:before{content:"\f316"}.brandico-jabber:before{content:"\f317"}.brandico-lastfm:before{content:"\f318"}.brandico-lastfm-rect:before{content:"\f319"}.brandico-linkedin:before{content:"\f31a"}.brandico-linkedin-rect:before{content:"\f31b"}.brandico-picasa:before{content:"\f31c"}.brandico-wordpress:before{content:"\f31d"}.brandico-instagram:before{content:"\f31e"}.brandico-instagram-filled:before{content:"\f31f"}
+.brandico-facebook:before {
+  content: "\f300";
+}
+.brandico-facebook-rect:before {
+  content: "\f301";
+}
+.brandico-twitter:before {
+  content: "\f302";
+}
+.brandico-twitter-bird:before {
+  content: "\f303";
+}
+.brandico-vimeo:before {
+  content: "\f30f";
+}
+.brandico-vimeo-rect:before {
+  content: "\f30e";
+}
+.brandico-tumblr:before {
+  content: "\f311";
+}
+.brandico-tumblr-rect:before {
+  content: "\f310";
+}
+.brandico-googleplus-rect:before {
+  content: "\f309";
+}
+.brandico-github-text:before {
+  content: "\f307";
+}
+.brandico-github:before {
+  content: "\f308";
+}
+.brandico-skype:before {
+  content: "\f30b";
+}
+.brandico-icq:before {
+  content: "\f304";
+}
+.brandico-yandex:before {
+  content: "\f305";
+}
+.brandico-yandex-rect:before {
+  content: "\f306";
+}
+.brandico-vkontakte-rect:before {
+  content: "\f30a";
+}
+.brandico-odnoklassniki:before {
+  content: "\f30c";
+}
+.brandico-odnoklassniki-rect:before {
+  content: "\f30d";
+}
+.brandico-friendfeed:before {
+  content: "\f312";
+}
+.brandico-friendfeed-rect:before {
+  content: "\f313";
+}
+.brandico-blogger:before {
+  content: "\f314";
+}
+.brandico-blogger-rect:before {
+  content: "\f315";
+}
+.brandico-deviantart:before {
+  content: "\f316";
+}
+.brandico-jabber:before {
+  content: "\f317";
+}
+.brandico-lastfm:before {
+  content: "\f318";
+}
+.brandico-lastfm-rect:before {
+  content: "\f319";
+}
+.brandico-linkedin:before {
+  content: "\f31a";
+}
+.brandico-linkedin-rect:before {
+  content: "\f31b";
+}
+.brandico-picasa:before {
+  content: "\f31c";
+}
+.brandico-wordpress:before {
+  content: "\f31d";
+}
+.brandico-instagram:before {
+  content: "\f31e";
+}
+.brandico-instagram-filled:before {
+  content: "\f31f";
+}
 
 [class*="brandico-"]:before {
-    font-family: 'brandico', sans-serif;
-    font-size: 40px;
+  font-family: "brandico", sans-serif;
+  font-size: 40px;
 }
 
-.hero{
-    text-align: center;
-    margin: 0 0 3rem 0;
+.hero {
+  text-align: center;
+  margin: 0 0 3rem 0;
 }
-.mv-bar.mv-ui{
-    display: none;
+.mv-bar.mv-ui {
+  display: none;
 }
-body{
-    background: #8858ad;
-    color:#feebdd;
-    margin: 0;
-    padding-top: 3rem;
+body {
+  background: #8858ad;
+  color: #feebdd;
+  margin: 0;
+  padding-top: 3rem;
 }
-html{
-    margin: 0;
+html {
+  margin: 0;
 }
-a{
-    color:#ff8fd1;
+a {
+  color: #ff8fd1;
 }
-a:hover{
-    color:#ff8fd1;
+a:hover {
+  color: #ff8fd1;
 }
-a:active{
-    color:#ff8fd1;
+a:active {
+  color: #ff8fd1;
 }
-.description{
-    margin: 3rem 0;
+.description {
+  margin: 3rem 0;
 }
-.links{
-    text-align: center;
+.links {
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: "Modak", cursive;
+  font-weight: 300;
+  margin-top: 4rem;
 }
