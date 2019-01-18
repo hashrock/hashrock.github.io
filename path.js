@@ -10,7 +10,7 @@ function onMouseDown(event) {
     stroke: false,
     segments: true,
     handles: true,
-    tolerance: 4
+    tolerance: 8
   });
   if (hitResult && hitResult[0]) {
     handle = null;
