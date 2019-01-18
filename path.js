@@ -1,4 +1,5 @@
 var handle;
+var segment;
 project.importSVG("./assets/hashrock-icon.svg");
 
 function onMouseDown(event) {
@@ -16,7 +17,8 @@ function onMouseDown(event) {
     handle = null;
     segment = null;
 
-    console.log(hitResult[0]);
+    project.deselectAll();
+    hitResult[0].item.fullySelected = true;
     if (hitResult[0].type === "handle-in") {
       handle = hitResult[0].segment.handleIn;
     }
@@ -37,14 +39,13 @@ function onMouseDown(event) {
     segments: true
   });
   if (ha && ha[0]) {
-    console.log(ha[0]);
     project.deselectAll();
     ha[0].item.fullySelected = true;
+    selected = ha[0].item
   }
 }
 
 function onMouseDrag(event) {
-  console.log(handle);
   // If we hit a handle before, move it:
   if (handle) {
     handle.x += event.delta.x;
