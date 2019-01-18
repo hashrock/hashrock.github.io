@@ -145,3 +145,76 @@ h1 {
   font-weight: 300;
   margin-top: 4rem;
 }
+
+body {
+  /* background: #af6996; */
+  background: white;
+  color: #666;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+canvas {
+  height: 360px;
+  width: 360px;
+}
+
+#app {
+  text-align: center;
+  padding-top: 8rem;
+}
+
+#about {
+  opacity: 0;
+}
+
+#about.start {
+  opacity: 1;
+}
+
+#about.start path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 10s ease forwards;
+}
+
+#about path.path-first {
+  stroke: #822E33;
+}
+
+#about path.path-second {
+  stroke: #FF8F8A;
+  animation-delay: 2s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+input {
+  width: 30rem;
+}
+
+select {
+  width: 30rem;
+}
+
+textarea {
+  width: 30rem;
+}
+
+img.heading {
+  margin-top: 4rem;
+}
+
+.works__img {
+  max-width: 40rem;
+}
+
+.works__item {
+  margin-bottom: 0.5rem;
+}
