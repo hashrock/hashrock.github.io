@@ -5,101 +5,17 @@
   font-weight: normal;
   src: url("./brandico.woff") format("woff");
 }
-.brandico-facebook:before {
-  content: "\f300";
-}
-.brandico-facebook-rect:before {
-  content: "\f301";
-}
 .brandico-twitter:before {
   content: "\f302";
 }
 .brandico-twitter-bird:before {
   content: "\f303";
 }
-.brandico-vimeo:before {
-  content: "\f30f";
-}
-.brandico-vimeo-rect:before {
-  content: "\f30e";
-}
-.brandico-tumblr:before {
-  content: "\f311";
-}
-.brandico-tumblr-rect:before {
-  content: "\f310";
-}
-.brandico-googleplus-rect:before {
-  content: "\f309";
-}
 .brandico-github-text:before {
   content: "\f307";
 }
 .brandico-github:before {
   content: "\f308";
-}
-.brandico-skype:before {
-  content: "\f30b";
-}
-.brandico-icq:before {
-  content: "\f304";
-}
-.brandico-yandex:before {
-  content: "\f305";
-}
-.brandico-yandex-rect:before {
-  content: "\f306";
-}
-.brandico-vkontakte-rect:before {
-  content: "\f30a";
-}
-.brandico-odnoklassniki:before {
-  content: "\f30c";
-}
-.brandico-odnoklassniki-rect:before {
-  content: "\f30d";
-}
-.brandico-friendfeed:before {
-  content: "\f312";
-}
-.brandico-friendfeed-rect:before {
-  content: "\f313";
-}
-.brandico-blogger:before {
-  content: "\f314";
-}
-.brandico-blogger-rect:before {
-  content: "\f315";
-}
-.brandico-deviantart:before {
-  content: "\f316";
-}
-.brandico-jabber:before {
-  content: "\f317";
-}
-.brandico-lastfm:before {
-  content: "\f318";
-}
-.brandico-lastfm-rect:before {
-  content: "\f319";
-}
-.brandico-linkedin:before {
-  content: "\f31a";
-}
-.brandico-linkedin-rect:before {
-  content: "\f31b";
-}
-.brandico-picasa:before {
-  content: "\f31c";
-}
-.brandico-wordpress:before {
-  content: "\f31d";
-}
-.brandico-instagram:before {
-  content: "\f31e";
-}
-.brandico-instagram-filled:before {
-  content: "\f31f";
 }
 
 [class*="brandico-"]:before {
@@ -140,12 +56,16 @@ a:active {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 10vw;
   font-family: "Modak", cursive;
   font-weight: 300;
   margin-top: 4rem;
 }
-
+@media (min-width: 800px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
 body {
   /* background: #af6996; */
   background: white;
@@ -181,11 +101,11 @@ canvas {
 }
 
 #about path.path-first {
-  stroke: #822E33;
+  stroke: #822e33;
 }
 
 #about path.path-second {
-  stroke: #FF8F8A;
+  stroke: #ff8f8a;
   animation-delay: 2s;
 }
 
@@ -217,4 +137,14 @@ img.heading {
 
 .works__item {
   margin-bottom: 0.5rem;
+}
+
+.illustration__item {
+  max-width: 50%;
+  min-width: 300px;
+}
+
+.illustration__caption {
+  font-weight: 700;
+  font-size: 0.8rem;
 }
